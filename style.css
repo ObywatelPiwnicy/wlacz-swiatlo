@@ -1,0 +1,54 @@
+*{ margin: 0; }
+
+.room, .dark, .switch{ position: absolute; }
+
+.room, .dark{
+	height: 100vh;
+	width: 100vw;
+	background-size: cover;
+}
+
+.room{
+	background: url('img/kitchen-living-room-4043091_1920.jpg')
+	 center no-repeat;
+	 background-position: center;
+	z-index: 0;
+}
+
+.dark{
+	background-color: black;
+	z-index: 1;
+	transition: all 1s ease;
+}
+
+.switch{
+	
+	top: 5%;
+	left: 5%;
+	height: 100px;
+	width: 100px;
+	border: 50px solid greenyellow;
+	border-radius: 50%;
+	z-index: 2;
+	box-sizing: border-box;
+	animation: switchOff 400ms linear infinite alternate;
+}
+
+.switch:hover{
+	animation: none;
+}
+
+.switch:hover + .dark{
+	background-color: transparent;
+}
+
+@keyframes switchOff {
+	from {
+		border: 0px solid greenyellow;
+		opacity: 0;
+	}
+	to {
+		border: 50px solid greenyellow;
+		opacity: 1;
+	}
+}
